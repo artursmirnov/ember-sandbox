@@ -15,13 +15,11 @@ cache:
 
 env:
   matrix:
-    - SECRET_VAR2=SECRET2
-    - SECRET_VAR2=SECRET3
-    - SECRET_VAR2=SECRET4
+    - SECRET_VAR1=SECRET1
 
 matrix:
   allow_failures:
-    - env: SECRET_VAR2=SECRET2
+    - env: SECRET_VAR2=SECRET1
       node_js: 10
 
 before_install:
