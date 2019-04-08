@@ -1,0 +1,6 @@
+import: ./.ember.yml
+
+env:
+  matrix:
+    - SECRET_VAR2=SECRET2
+    - SECRET_VAR3=SECRET3
