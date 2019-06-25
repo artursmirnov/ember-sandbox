@@ -1,6 +1,29 @@
-import: ./.ember.yml
+
+language: node_js
+node_js:
+  - 6
+  - 10
+
+sudo: false
+dist: trusty
+
+addons:
+  chrome: stable
+
+cache: npm
 
 env:
   matrix:
-    - SECRET_VAR2=SECRET2
-    - SECRET_VAR3=SECRET3
+    - SECRET_VAR1=SECRET1
+
+matrix:
+  allow_failures:
+    - env: SECRET_VAR2=SECRET1
+      node_js: 10
+
+before_install:
+  - npm config set spin false
+
+script:
+  - npm run lint:js
+  - npm test
